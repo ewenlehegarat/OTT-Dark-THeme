@@ -292,19 +292,22 @@ main{
     align-items: center;
     flex-direction: column;
     section{
-        margin-top: 100px;
+        width: 358px;
+        margin: 100px 0 51px 0;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        gap: 40px;
-        width: 358px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        gap: 60px;
+        padding-bottom: 20px;
         .section_text{
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            gap: 8px;
+            gap: 10px;
             h2{
                 font-size: 24px;
                 font-weight: var(--fw-bold);
@@ -324,9 +327,20 @@ main{
             justify-content: center;
             gap: 20px;
             .card{
+                position: relative;
                 background-color: var(--Black-10);
                 border-radius: 10px;
                 padding: 20px;
+                overflow: hidden;
+                .filter_linear{
+                    position: absolute;
+                    width: 193px;
+                    height: 210px;
+                    background: linear-gradient(#1a1a1a00, #1A1A1A);
+                    top: -50px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
                 .card_image{
                     display: flex;
                     justify-content: center;
@@ -483,6 +497,54 @@ main{
             }
         }
     }
+    /* ############################ */
+    /* Main */
+    /* ############################ */
+    main{   
+        section{
+            width: 1279px;
+            margin: 150px 0 120px 0;
+            align-items: start;
+            gap: 40px;
+            padding-bottom: 0;
+            .section_text{
+                align-items: start;
+                gap: 8px;
+                h2{
+                    font-size: 28px;
+                }
+                p{
+                    font-size: 16px;
+                }
+            }
+            .section_content{
+                align-self: center;
+                .card{
+                    padding: 24px;
+                    .filter_linear{ 
+                        top: 24px;
+                    }
+                    .card_image{
+                        .image_top, .image_bot{
+                            img{
+                                width: 93.4px;
+                                height: 102.5px;
+                            }
+                        }
+                    }
+                    .card_bar{
+                        h3{
+                            font-size: 16px;
+                        }
+                        ion-icon{
+                            width: 24px;
+                            height: 24px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 /* ############################################## */
@@ -518,6 +580,56 @@ main{
         }
         .bottom_container{
             padding: 796px 412px 0 412px;
+        }
+    }
+    /* ############################ */
+    /* Main */
+    /* ############################ */
+    main{   
+        section{
+            width: 1597px;
+            margin: 150px 0 120px 0;
+            align-items: start;
+            gap: 80px;
+            .section_text{
+                gap: 14px;
+                h2{
+                    font-size: 38px;
+                }
+                p{
+                    font-size: 18px;
+                }
+            }
+            .section_content{
+                gap: 30px;
+                .card{
+                    border-radius: 12px;
+                    padding: 30px;
+                    .filter_linear{ 
+                        width: 237px;
+                        height: 252px;
+                        top: 30px;
+                    }
+                    .card_image{
+                        .image_top, .image_bot{
+                            img{
+                                width: 115.2px;
+                                height: 123.55px;
+                                border-radius: 6px;
+                            }
+                        }
+                    }
+                    .card_bar{
+                        h3{
+                            font-size: 18px;
+                        }
+                        ion-icon{
+                            width: 30px;
+                            height: 30px;
+                        }
+                    }
+                }
+            }
         }
     }
 }
