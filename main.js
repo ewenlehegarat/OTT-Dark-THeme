@@ -12,6 +12,9 @@ const cardTitle = document.querySelectorAll('.card_title')
 const paragrapheMobile = document.querySelectorAll('.paragraphe_mobile')
 const paragraphePc = document.querySelectorAll('.card_title .text_container p')
 const iconPlus = document.querySelectorAll('.icon_plus')
+const monthlyText = document.querySelector('.monthly_text')
+const yearlyText = document.querySelector('.yearly_text')
+const backgroundTabs = document.querySelector('.background_tabs')
 
 isClosed = true
 
@@ -91,6 +94,20 @@ isClosed = true
             }
             isClosed = !isClosed
             })
+        })
+
+        yearlyText.addEventListener('click', ()=>{
+            backgroundTabs.style.left = '100px'
+            // backgroundTabs.style.width = '70px'
+            yearlyText.style.color = '#fff'
+            monthlyText.style.color = '#999999'
+        })
+
+        monthlyText.addEventListener('click', ()=>{
+            backgroundTabs.style.left = '8px'
+            // backgroundTabs.style.width = '86px'
+            monthlyText.style.color = '#fff'
+            yearlyText.style.color = '#999999'
         })
 
     }else if(window.innerWidth > 1440 || window.innerWidth < 1920){
