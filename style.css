@@ -741,7 +741,7 @@ main{
                 }
             }
             .questions_content{
-                justify-content: start;
+                justify-content: stretch;
                 gap: 40px;
                 .card{
                     width: 580px;
