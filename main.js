@@ -7,11 +7,17 @@ const movieLink = document.querySelector('.movie')
 const supportLink = document.querySelector('.support')
 const subsLink = document.querySelector('.subs')
 const textContainerP = document.querySelector('.text_container p')
+const textDeviceP = document.querySelector('.device_text p')
+const cardTitle = document.querySelectorAll('.card_title')
+const paragrapheMobile = document.querySelectorAll('.paragraphe_mobile')
+const paragraphePc = document.querySelectorAll('.card_title .text_container p')
+const iconPlus = document.querySelectorAll('.icon_plus')
 
 isClosed = true
 
     if(window.innerWidth < 1440){
         textContainerP.textContent = 'StreamVibe is the best streaming experience for watching your favorite movies and shows on demand, anytime, anywhere.'
+        textDeviceP.textContent = 'With StreamVibe, you can enjoy your favorite movies and TV shows anytime, anywhere.'
         buttonDepliant.addEventListener('click', ()=>{
             if(isClosed){
                 ionIcon.name = 'close-outline';
@@ -56,7 +62,7 @@ isClosed = true
                 homeLink.style.fontWeight = '400'
             })
         })
-
+        
         subsLink.addEventListener('mouseover', ()=>{
             setTimeout(()=>{
                 subsLink.style.color = 'var(--White)'
@@ -73,8 +79,23 @@ isClosed = true
                 subsLink.style.color = 'var(--Grey-75)'
             })
         })
+        
+        cardTitle.forEach((card, index) => {
+            card.addEventListener('click', () => {
+            if(isClosed){
+                paragrapheMobile[index].style.display = 'block'
+                iconPlus[index].src = 'img/icon_moins.png'
+            }else if(!isClosed){
+                paragrapheMobile[index].style.display = 'none'
+                iconPlus[index].src = 'img/icon_plus.png'
+            }
+            isClosed = !isClosed
+            })
+        })
+
     }else if(window.innerWidth > 1440 || window.innerWidth < 1920){
         textContainerP.textContent = 'StreamVibe is the best streaming experience for watching your favorite movies and shows on demand, anytime, anywhere. With StreamVibe, you can enjoy a wide variety of content, including the latest blockbusters, classic movies, popular TV shows, and more. You can also create your own watchlists, so you can easily find the content you want to watch.'
+        textDeviceP.textContent = 'With StreamVibe, you can enjoy your favorite movies and TV shows anytime, anywhere. Our platform is designed to be compatible with a wide range of devices, ensuring that you never miss a moment of entertainment.'
         movieLink.addEventListener('mouseover', ()=>{
             setTimeout(()=>{
                 movieLink.style.color = 'var(--White)'
@@ -128,6 +149,20 @@ isClosed = true
                 backgroundButton.style.width = '79px'
             })
         })
+
+        cardTitle.forEach((card, index) => {
+            card.addEventListener('click', () => {
+            if(isClosed){
+                paragraphePc[index].style.display = 'block'
+                iconPlus[index].src = 'img/icon_moins.png'
+            }else if(!isClosed){
+                paragraphePc[index].style.display = 'none'
+                iconPlus[index].src = 'img/icon_plus.png'
+            }
+            isClosed = !isClosed
+            })
+        })
     }else if(window.innerWidth < 1920){
         textContainerP.textContent = 'StreamVibe is the best streaming experience for watching your favorite movies and shows on demand, anytime, anywhere. With StreamVibe, you can enjoy a wide variety of content, including the latest blockbusters, classic movies, popular TV shows, and more. You can also create your own watchlists, so you can easily find the content you want to watch.'
+        textDeviceP.textContent = 'With StreamVibe, you can enjoy your favorite movies and TV shows anytime, anywhere. Our platform is designed to be compatible with a wide range of devices, ensuring that you never miss a moment of entertainment.'
     }
